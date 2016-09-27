@@ -3,6 +3,7 @@
 const config = require('./config')
 const util = require('./lib/util');
 const form = require('./lib/validate');
+const payment = require('./lib/payment');
 const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
@@ -13,27 +14,22 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.post('/checkout', (req, res) => {
 
   if(form.isValid(req.body)){
-    //error
-  }
+    //record transaction
 
-  var isPaypal = false;
+    let payment = payment({
+        currency: req.body.cc_currency,
+        name: req.body.cc_name,
+        number: req.body.cc_number,
+        expirationMonth: req.body.cc_expiry_month,
+        expirationYear: req.body.cc_expiry_year,
+        cvv: req.body.cc_cvv   
+    })
 
-  if(util.isAmericanExpressCard(req.body.cc_number)){
-    if(req.body.cc_currency === 'USD'){
-      isPaypal = true;
-    }else{ 
-      throw 'American Express Credit Card only support USD';
-    }
-  }
-
-  if(['USD', 'EUR', 'AUD'].contains(req.body.cc_currency)){
-    isPaypal = true;
-  }
-
-  if(isPaypal){
-    //paypal
-  }else{
-    //braintree
+    payment.send(req.body.cc_price, (err, res) => {
+      if(err) throw err;
+      console.log(res);
+    })    
+ 
   }
 
   res.send('hello')
