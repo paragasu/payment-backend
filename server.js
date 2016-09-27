@@ -12,7 +12,6 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended:true}))
 
 app.post('/checkout', (req, res) => {
-
   if(form.isValid(req.body)){
     //record transaction
     let payment = payment({
