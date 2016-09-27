@@ -1,0 +1,26 @@
+{
+  "name": "payment-backend",
+  "version": "1.0.0",
+  "description": "payment backend using paypal and braintree api",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha -R nyan -b ./test || exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paragasu/payment-backend.git"
+  },
+  "keywords": [
+    "paypal",
+    "braintree",
+    "payment",
+    "payment",
+    "gateway"
+  ],
+  "author": "Jeffry L.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paragasu/payment-backend/issues"
+  },
+  "homepage": "https://github.com/paragasu/payment-backend#readme"
+}
