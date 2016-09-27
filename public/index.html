@@ -1,22 +1,50 @@
 <html>
 <head>
   <title> Payment Backend </title>
+  <style>
+    body { font-size: 0.8em; } 
+    label { display: block; } 
+    div { padding: 0.5em; }
+  </style>
 </head>
 <body>
   <form method="POST" action="/checkout">
-    <input name="price" />
-    <select name="currency">
+    <div>
+      <label> Price </label>
+      <input name="price" />
+    </div>
+    <div>
+      <label> Currency </label>   
+      <select name="currency">
       <option value="USD"> USD </option>
       <option value="MYR"> MYR </option>
       <option value="SGD"> SGD </option>
       <option value="THB"> THB </option>
-    </select>   
-    <input type="name"/>
-    
-    <input name="cc_name" />
-    <input name="cc_number" />
-    <input name="cc_expiry" />
-    <input name="cc_ccv" />
+      </select>
+    </div>
+    <div>
+      <label> Full Name </label>
+      <input type="name"/>
+    </div>
+    <div>
+      <label> Credit Card Holder Name </label>
+      <input name="cc_name" />
+    </div>
+    <div>
+      <label> Credit Card Number </label>
+      <input name="cc_number" />
+    </div>
+    <div>
+      <label> Credit Card Expiration </label>
+      <input name="cc_expiry" />
+    </div>
+    <div>
+      <label> Credit Card CCV </label>
+      <input name="cc_ccv" />
+    </div>
+    <div>
+      <input type="submit" value="Checkout" />
+    </div>
   </form>
 <body>
 </html>
