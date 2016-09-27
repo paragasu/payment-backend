@@ -10,5 +10,5 @@ nodejs payment backend using paypal and braintree api
   $npm run test
 ```
 
-Open browser and point to http://localhost:3000
+Open browser and point to [http://localhost:3000](http://localhost:3000)
 
