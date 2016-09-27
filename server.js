@@ -29,7 +29,6 @@ app.post('/checkout', (req, res) => {
       if(err) throw err;
       console.log(res);
     })    
- 
   }
 
   res.send('hello')
