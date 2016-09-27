@@ -15,7 +15,6 @@ app.post('/checkout', (req, res) => {
 
   if(form.isValid(req.body)){
     //record transaction
-
     let payment = payment({
         currency: req.body.cc_currency,
         name: req.body.cc_name,
