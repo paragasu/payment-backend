@@ -6,11 +6,12 @@ const config = {
     paypal: {
       api: process.env.PAYPAL_API || '',
       secret: process.env.PAYPAL_SECRET || ''
-    }
+    },
 
     braintree: {
-      api: process.env.BRAINTREE_API || '',
-      secret: process.env.BRAINTREE_SECRET || ''
+      merchantId: process.env.MERCHANT_ID || '',
+      publicKey: process.env.PUBLIC_KEY || '',
+      privateKey: process.env.PRIVATE_KEY || ''
     }
   }
 }
