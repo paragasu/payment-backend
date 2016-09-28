@@ -33,6 +33,12 @@ describe('Select payment gateway based on given rules', ()=>{
     assert.equal(paymentGateway, 'paypal')
   }) 
 
+  it('American Express Card should return error if currency is not USD', ()=>{
+    let paymentGateway = util.getPaymentGateway('378282246310005', 'HKD')
+    let errorMsg = 'American Express credit card only support USD currency';
+    assert.equal(paymentGateway, errorMsg)
+  }) 
+
   it('USD currency should return paypal', ()=>{
     let paymentGateway = util.getPaymentGateway('5555555555554444', 'USD')
     assert.equal(paymentGateway, 'paypal')
