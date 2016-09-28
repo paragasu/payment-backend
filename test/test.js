@@ -4,7 +4,7 @@ const assert = require('chai').assert;
 const util = require('./../lib/util');
 
 //https://www.paypalobjects.com/en_US/vhelp/paypalmanager_help/credit_card_numbers.htm
-describe('Check if it is Amex card', ()=>{
+describe('Check if it is American Express card', ()=>{
   it('Valid american express number should return true', ()=>{
     let isAmex = util.isAmericanExpressCard('378282246310005')
     assert.equal(isAmex, true)
