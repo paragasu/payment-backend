@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "NODE_ENV=dev nodemon ./server.js",
-    "test": "mocha -R nyan -b ./test || exit 1"
+    "test": "mocha -b ./test || exit 1"
   },
   "repository": {
     "type": "git",
@@ -26,8 +26,9 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "braintree": "^1.41.0",
+    "chai": "^3.5.0",
     "express": "^4.14.0",
-    "mocha": "^3.0.2",
+    "mocha": "^3.1.0",
     "nodemon": "^1.10.2",
     "paypal-rest-sdk": "^1.6.9"
   }
