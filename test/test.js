@@ -2,6 +2,7 @@
 
 const assert = require('chai').assert;
 const util = require('./../lib/util');
+const form = require('./../lib/validate');
 
 //https://www.paypalobjects.com/en_US/vhelp/paypalmanager_help/credit_card_numbers.htm
 describe('Check if it is American Express card', ()=>{
@@ -68,4 +69,10 @@ describe('Select payment gateway based on given rules', ()=>{
     let paymentGateway = util.getPaymentGateway('5555555555554444', 'SGD')
     assert.equal(paymentGateway, 'braintree')
   }) 
+})
+
+
+describe('Form input validation', ()=>{
+  it('Test if price is valid', ()=>{
+  })  
 })
