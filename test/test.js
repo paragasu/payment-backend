@@ -102,4 +102,41 @@ describe('Form validation', ()=>{
   it('Invalid currency when it is not in the supported currency list', ()=>{
     assert.equal(form.validCurrency('PHP'), false)
   })
+
+  it('Valid credit card CCV', ()=>{
+    assert.equal(form.validCvv(443), true)
+  })
+
+  it('Invalid credit card CCV', ()=>{
+    assert.equal(form.validCvv(443738), false)
+  })
+
+  it('Check for valid expiry month', ()=>{
+    assert.equal(form.validExpiryMonth('08'), true)
+  })
+
+  it('Check for invalid expirty month', ()=>{
+    assert.equal(form.validExpiryMonth('88'), false)
+  })
+
+  it('Check for valid expiry year', ()=>{
+    assert.equal(form.validExpiryYear('18'), true)
+  })
+
+  it('Check for invalid expiry year', ()=>{
+    assert.equal(form.validExpiryYear('34'), false)
+  })
+
+
+  it('Valid credit card should return true', ()=>{
+    assert.equal(form.validCreditCard('378282246310005'), true)
+  })
+
+  it('Invalid random chars should return false', ()=>{
+    assert.equal(form.validCreditCard('asdfasf8'), false)
+  })
+
+  it('Invalid credit card should return false', ()=>{
+    assert.equal(form.validCreditCard('378282246310009'), false)
+  })
 })
