@@ -10,7 +10,6 @@ const app = express();
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended:true}))
 app.use('/checkout', form.checkValid);
-
 app.post('/checkout', (req, res) => {
   //record transaction
   let payment = pay({
