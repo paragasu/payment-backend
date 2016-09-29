@@ -34,12 +34,6 @@ describe('Select payment gateway based on given rules', ()=>{
     assert.equal(paymentGateway, 'paypal')
   }) 
 
-  it('American Express Card should return error if currency is not USD', ()=>{
-    let paymentGateway = util.getPaymentGateway('378282246310005', 'HKD')
-    let errorMsg = 'American Express credit card only support USD currency';
-    assert.equal(paymentGateway, errorMsg)
-  }) 
-
   it('USD currency should return paypal', ()=>{
     let paymentGateway = util.getPaymentGateway('5555555555554444', 'USD')
     assert.equal(paymentGateway, 'paypal')
@@ -72,7 +66,40 @@ describe('Select payment gateway based on given rules', ()=>{
 })
 
 
-describe('Form input validation', ()=>{
-  it('Test if price is valid', ()=>{
+describe('Form validation', ()=>{
+  it('Name is valid', ()=>{
+    assert.equal(form.validName('Sumandak Tamparuli'), true)  
   })  
+
+  it('Name is invalid', ()=>{
+    assert.equal(form.validName('Sum &*^'), false)
+  })
+
+  it('Price integer is valid', ()=>{
+    assert.equal(form.validPrice(18), true)
+  })
+
+  it('Price double is valid', ()=>{
+    assert.equal(form.validPrice(18.00), true)
+  })
+
+  it('Price double is valid', ()=>{
+    assert.equal(form.validPrice(18.90), true)
+  })
+
+  it('Price string is invalid', ()=>{
+    assert.equal(form.validPrice('18.00'), true)
+  })
+
+  it('Price string is invalid', ()=>{
+    assert.equal(form.validPrice('hello'), false)
+  })
+
+  it('Valid currency', ()=>{
+    assert.equal(form.validCurrency('USD'), true)
+  })
+
+  it('Invalid currency when it is not in the supported currency list', ()=>{
+    assert.equal(form.validCurrency('PHP'), false)
+  })
 })
