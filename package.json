@@ -4,7 +4,7 @@
   "description": "payment backend using paypal and braintree api",
   "main": "server.js",
   "scripts": {
-    "dev": "NODE_ENV=dev nodemon ./server.js",
+    "dev": "NODE_ENV=development nodemon ./server.js",
     "test": "mocha -b ./test || exit 1"
   },
   "repository": {

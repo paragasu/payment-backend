@@ -1,20 +1,21 @@
 'use strict';
 
 const config = {
-  dev: {
-    port: process.env.PORT || 3000,
+  development: {
+    port: 3000,
+    sandbox: true,
     paypal: {
-      api: process.env.PAYPAL_API || '',
-      secret: process.env.PAYPAL_SECRET || ''
+      //username payment_api1.backend.com
+      clientId: 'BBHJZTPU534KF28J',
+      clientSecret: 'AFcWxV21C7fd0v3bYYYRCpSSRl31AMXfviMZHggoFXWsoX9GKgrRhy8Q'
     },
-
     braintree: {
-      merchantId: process.env.MERCHANT_ID || '',
-      publicKey: process.env.PUBLIC_KEY || '',
-      privateKey: process.env.PRIVATE_KEY || ''
+      merchantId: '55r7jztdxb2qwqm9',
+      publicKey: 'wkqy35sgmgztprzq',
+      privateKey: '689022be221a1a40d39606aef6979788'
     }
   }
 }
 
 
-module.exports = config[process.env.NODE_ENV || 'dev']
+module.exports = config[process.env.NODE_ENV || 'development']

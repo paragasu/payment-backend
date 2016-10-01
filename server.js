@@ -14,8 +14,8 @@ app.post('/checkout', (req, res) => {
   //record transaction
   let payment = pay({
       currency: req.body.cc_currency,
-      name: req.body.cc_name,
-      number: req.body.cc_number,
+      ccName: req.body.cc_name,
+      ccNumber: req.body.cc_number,
       expirationMonth: req.body.cc_expiry_month,
       expirationYear: req.body.cc_expiry_year,
       cvv: req.body.cc_cvv   
