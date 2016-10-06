@@ -12,7 +12,7 @@ nodejs payment backend using paypal and braintree api
 Open browser and point to [http://localhost:3000](http://localhost:3000)
 
 
-#Test 
+#Dummy Test 
 ```
   visa
   4032032419770786 
@@ -21,4 +21,6 @@ Open browser and point to [http://localhost:3000](http://localhost:3000)
   American Express
   371449635398431
 ```
+
+Currently only support Visa, Mastercard and American Express Card
 
