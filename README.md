@@ -27,7 +27,9 @@ Open browser and point to [http://localhost:3000](http://localhost:3000)
 ```
   visa
   4111111111111111
-  SGD *other than USD, EUR and AUD will do*
+  SGD 
 ```
+_Currency other than USD, EUR and AUD will do_
+
 Currently only support Visa, Mastercard and American Express Card
 
