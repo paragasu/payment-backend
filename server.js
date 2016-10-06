@@ -32,6 +32,14 @@ app.post('/checkout', (req, res) => {
   //TODO: save transaction
 })
 
+app.get('/success', (req, res)=>{
+  console.log(req.body);
+})
+
+app.get('/cancel', (req, res)=>{
+  console.log(req.body);
+})
+
 app.listen(config.port, () => {
   console.log('Server  started at port ', config.port)
 })
