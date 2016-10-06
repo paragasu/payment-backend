@@ -21,7 +21,6 @@ app.post('/checkout', (req, res) => {
       currency: req.body.currency,
       amount: req.body.price
   })
-
   pay.send((err, result)=>{
       if(err) return res.send(err);
       let data = {
