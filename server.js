@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended:true}))
 app.use('/checkout', form.checkValid);
 app.post('/checkout', (req, res) => {
-  let params = {
+  let pay = payment({
       ccName: req.body.cc_name,
       ccNumber: req.body.cc_number,
       expirationMonth: req.body.cc_expiry_month,
@@ -20,16 +20,21 @@ app.post('/checkout', (req, res) => {
       cvv: req.body.cc_cvv,
       currency: req.body.currency,
       amount: req.body.price
-  }
-
-  let pay = payment(params);
+  })
 
   pay.send((err, result)=>{
       if(err) return res.send(err);
-      res.send(result);
+      let data = {
+        price: req.body.price,
+        currency: req.body.currency,
+        fullName: req.body.full_name,
+        response: result
+      };
+      //save data + response
+      db.save(data, (error, info)=>{
+        res.send(data);
+      })
   })    
-
-  //TODO: save transaction
 })
 
 app.listen(config.port, () => {
