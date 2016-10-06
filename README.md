@@ -12,7 +12,8 @@ nodejs payment backend using paypal and braintree api
 Open browser and point to [http://localhost:3000](http://localhost:3000)
 
 
-#Dummy Test 
+#Testing
+### Paypal
 ```
   visa
   4032032419770786 
@@ -22,5 +23,11 @@ Open browser and point to [http://localhost:3000](http://localhost:3000)
   371449635398431
 ```
 
+### Braintree 
+```
+  visa
+  4111111111111111
+  SGD *other than USD, EUR and AUD will do*
+```
 Currently only support Visa, Mastercard and American Express Card
 
