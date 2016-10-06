@@ -1,5 +1,6 @@
 # payment-backend
-nodejs payment backend using paypal and braintree api
+Nodejs payment backend using paypal and braintree api
+Currently only implement for Visa, Mastercard and American Express Card
 
 
 #Installation
@@ -31,5 +32,4 @@ Open browser and point to [http://localhost:3000](http://localhost:3000)
 ```
 _Currency other than USD, EUR and AUD will do_
 
-Currently only support Visa, Mastercard and American Express Card
 
