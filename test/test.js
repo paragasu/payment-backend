@@ -5,6 +5,21 @@ const util = require('./../lib/util');
 const form = require('./../lib/validate');
 
 //https://www.paypalobjects.com/en_US/vhelp/paypalmanager_help/credit_card_numbers.htm
+describe('Check for credit card type', ()=>{
+  it('Should be a valid american express', ()=>{
+    assert.equal(util.getCreditCardType('378282246310005'), 'amex')
+  })
+
+  it('Should be a valid visa card', ()=>{
+    assert.equal(util.getCreditCardType('4012888888881881'), 'visa')
+  })
+
+  it('Should be a valid master card', ()=>{
+    assert.equal(util.getCreditCardType('5105105105105100'), 'mc')
+  })
+})
+
+
 describe('Check if it is American Express card', ()=>{
   it('Valid american express number should return true', ()=>{
     let isAmex = util.isAmericanExpressCard('378282246310005')
@@ -126,11 +141,11 @@ describe('Form validation', ()=>{
   })
 
   it('Check for valid expiry year', ()=>{
-    assert.equal(form.validExpiryYear('18'), true)
+    assert.equal(form.validExpiryYear('2018'), true)
   })
 
   it('Check for invalid expiry year', ()=>{
-    assert.equal(form.validExpiryYear('34'), false)
+    assert.equal(form.validExpiryYear('2034'), false)
   })
 
 

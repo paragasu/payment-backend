@@ -9,6 +9,16 @@ nodejs payment backend using paypal and braintree api
   $npm run test
   $npm run dev
 ```
-
 Open browser and point to [http://localhost:3000](http://localhost:3000)
+
+
+#Test 
+```
+  visa
+  4032032419770786 
+  11/2019
+
+  American Express
+  371449635398431
+```
 

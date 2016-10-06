@@ -5,9 +5,8 @@ const config = {
     port: 3000,
     sandbox: true,
     paypal: {
-      //username payment_api1.backend.com
-      clientId: 'BBHJZTPU534KF28J',
-      clientSecret: 'AFcWxV21C7fd0v3bYYYRCpSSRl31AMXfviMZHggoFXWsoX9GKgrRhy8Q'
+      clientId: 'AX_SYjPGHaW2cgCAODpayjLqVp6jRQ4hbx-CZUeyPzXjNc8xxgZoHoiLNIe67o7jUrfBmXiX8W1VT9Rp',
+      clientSecret: 'EJqXwU2JLllw0P6Tw42PlJnrnFQq3OKbar3Jf4vuIh_pZibFPTx6D4iDwVeo5MopjGduC3rIQsVWLPcn'
     },
     braintree: {
       merchantId: '55r7jztdxb2qwqm9',
