@@ -25,6 +25,7 @@ Open browser and point to [http://localhost:3000](http://localhost:3000)
 ```
 
 ### Braintree 
+[Braintree's official credit card test list](https://developers.braintreepayments.com/reference/general/testing/node)
 ```
   visa
   4111111111111111
