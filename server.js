@@ -12,6 +12,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended:true}))
 app.use('/checkout', form.checkValid);
 app.post('/checkout', (req, res) => {
+  //configure payment
   let pay = payment({
       ccName: req.body.cc_name,
       ccNumber: req.body.cc_number,
@@ -21,6 +22,7 @@ app.post('/checkout', (req, res) => {
       currency: req.body.currency,
       amount: req.body.price
   })
+  //execute transaction
   pay.send((err, result)=>{
       if(err) return res.send(err);
       let data = {
