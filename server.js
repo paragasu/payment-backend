@@ -10,6 +10,7 @@ const app = express();
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended:true}))
+//validate request
 app.use('/checkout', form.checkValid);
 app.post('/checkout', (req, res) => {
   //configure payment
@@ -22,19 +23,19 @@ app.post('/checkout', (req, res) => {
       currency: req.body.currency,
       amount: req.body.price
   })
-  //execute transaction
+  //process payment
   pay.send((err, result)=>{
-      if(err) return res.send(err);
       let data = {
         price: req.body.price,
         currency: req.body.currency,
         fullName: req.body.full_name,
-        response: result
+        response: err | result
       };
       //save data + response
       db.save(data, (error, info)=>{
-        res.send(data);
+        console.log(info)
       })
+      res.send(data);
   })    
 })
 
