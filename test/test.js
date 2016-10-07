@@ -1,6 +1,7 @@
 'use strict';
 
 const assert = require('chai').assert;
+const expect = require('chai').expect;
 const util = require('./../lib/util');
 const form = require('./../lib/validate');
 
@@ -51,8 +52,8 @@ describe('Select payment gateway based on given rules', ()=>{
 
   it('American Express Card should return error', ()=>{
     let errMsg = 'American Express credit card only support USD currency'; 
-    let paymentGateway = util.getPaymentGateway('378282246310005', 'SGD')
-    assert.equal(paymentGateway, errMsg)
+    let paymentGateway = function(){ util.getPaymentGateway('378282246310005', 'SGD') }
+    expect(paymentGateway).to.throw(errMsg)
   }) 
 
   it('USD currency should return paypal', ()=>{
