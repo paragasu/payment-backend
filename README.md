@@ -17,6 +17,8 @@ Open browser and point to [http://localhost:3000](http://localhost:3000)
 
 #Testing
 ### Paypal
+[Paypal credit card test list](https://www.paypalobjects.com/en_US/vhelp/paypalmanager_help/credit_card_numbers.htm)
+
 ```
   visa
   4032032419770786 
