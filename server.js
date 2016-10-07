@@ -13,8 +13,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 //validate request
 app.use('/checkout', form.checkValid);
 app.post('/checkout', (req, res) => {
-  //configure payment
-  let pay = payment({
+  let opts = {
       ccName: req.body.cc_name,
       ccNumber: req.body.cc_number,
       expirationMonth: req.body.cc_expiry_month,
@@ -22,18 +21,26 @@ app.post('/checkout', (req, res) => {
       cvv: req.body.cc_cvv,
       currency: req.body.currency,
       amount: req.body.price
-  })
+  }
+  
+  try{
+    //configure payment
+    var pay = payment(opts);
+  }catch(e){
+    res.status(401).send(e);
+  }
+
   //process payment
   pay.send((err, result)=>{
       let data = {
         price: req.body.price,
         currency: req.body.currency,
         fullName: req.body.full_name,
-        response: err | result
+        response: err ? err : result
       };
       //save data + response
       db.save(data, (error, info)=>{
-        console.log(info)
+        console.log('Transaction saved, id:', info.insertedId);
       })
       res.send(data);
   })    
