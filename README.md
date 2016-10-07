@@ -5,7 +5,7 @@ Currently only implement for Visa, Mastercard and American Express Card
 
 #Installation
 
-Require mongodb to installed by at localhost:27017
+Require mongodb running at localhost:27017
 ```
   $git clone git@github.com:paragasu/payment-backend.git
   $npm install
