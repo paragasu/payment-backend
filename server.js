@@ -32,17 +32,18 @@ app.post('/checkout', (req, res) => {
 
   //process payment
   pay.send((err, result)=>{
+      let paymentStatus = err ? 'Failed' : 'Success';
       let data = {
         price: req.body.price,
         currency: req.body.currency,
         fullName: req.body.full_name,
-        status: err ? 'Failed' : 'Success',
+        status: paymentStatus,
         response: err ? err : result
       };
       //save data + response
       db.save(data, (error, info)=>{
         console.log('Transaction saved, id:', info.insertedId);
-        res.send('Payment processed. <a href="/status/' + info.insertedId + '"> View details </a>');
+        res.send('Payment ' + paymentStatus + '. <a href="/status/' + info.insertedId + '"> View details </a>');
       })
   })    
 })
