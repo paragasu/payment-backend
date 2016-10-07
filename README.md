@@ -5,9 +5,9 @@ Currently only implement for Visa, Mastercard and American Express Card
 
 #Installation
 
-Require mongodb running at localhost:27017
-```
+Require mongodb running at localhost:27017  
 On debian system,
+```
 #aptitude install mongodb
 #/etc/init.d/mongodb start
 ```
