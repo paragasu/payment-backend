@@ -42,7 +42,6 @@ app.post('/checkout', (req, res) => {
       };
       //save data + response
       db.save(data, (error, info)=>{
-        console.log('Transaction saved, id:', info.insertedId);
         res.send('Payment ' + paymentStatus + '. <a href="/status/' + info.insertedId + '"> View details </a>');
       })
   })    
