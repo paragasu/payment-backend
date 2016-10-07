@@ -9,8 +9,8 @@ Require mongodb running at localhost:27017
 ```
   $git clone git@github.com:paragasu/payment-backend.git
   $npm install
-  $npm run test
-  $npm run dev
+  $npm test
+  $npm run server
 ```
 Open browser and point to [http://localhost:3000](http://localhost:3000)
 
