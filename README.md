@@ -7,6 +7,12 @@ Currently only implement for Visa, Mastercard and American Express Card
 
 Require mongodb running at localhost:27017
 ```
+#aptitude install mongodb
+#/etc/init.d/mongodb start
+```
+
+Get source code
+```
   $git clone https://github.com/paragasu/payment-backend.git
   $npm install
   $npm test
