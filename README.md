@@ -1,5 +1,5 @@
 # payment-backend
-Nodejs payment backend using paypal and braintree api. 
+Nodejs payment backend using paypal and braintree api.   
 Currently only implement for Visa, Mastercard and American Express Card
 
 
