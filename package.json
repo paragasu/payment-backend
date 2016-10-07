@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon ./server.js",
+    "server" : "node ./server.js",
     "test": "mocha -b ./test || exit 1"
   },
   "repository": {
