@@ -47,7 +47,7 @@ app.post('/checkout', (req, res) => {
   })    
 })
 
-//transaction detail
+//view transaction detail
 app.get('/status/:id', (req, res)=>{
   db.get(req.params.id, (err, data)=>{
     res.send(data);
