@@ -27,7 +27,7 @@ app.post('/checkout', (req, res) => {
     //configure payment
     var pay = payment(opts);
   }catch(e){
-    res.status(401).send(e);
+    return res.status(401).send(e);
   }
 
   //process payment
