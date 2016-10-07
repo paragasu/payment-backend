@@ -11,7 +11,7 @@ Require mongodb to installed by at localhost:27017
   $npm install
   $npm run test
   $npm run dev
-``
+```
 Open browser and point to [http://localhost:3000](http://localhost:3000)
 
 
