@@ -38,7 +38,7 @@ app.post('/checkout', (req, res) => {
         currency: req.body.currency,
         fullName: req.body.full_name,
         status: paymentStatus,
-        response: err ? err : result
+        response: err || result
       };
       //save data + response
       db.save(data, (error, info)=>{
