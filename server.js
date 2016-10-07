@@ -49,7 +49,7 @@ app.post('/checkout', (req, res) => {
 
 //view transaction detail
 app.get('/status/:id', (req, res)=>{
-  db.get(req.params.id, (err, data)=>{
+  db.findById(req.params.id, (err, data)=>{
     res.send(data);
   })
 })
