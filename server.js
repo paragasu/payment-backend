@@ -36,14 +36,22 @@ app.post('/checkout', (req, res) => {
         price: req.body.price,
         currency: req.body.currency,
         fullName: req.body.full_name,
+        status: err ? 'Failed' : 'Success',
         response: err ? err : result
       };
       //save data + response
       db.save(data, (error, info)=>{
         console.log('Transaction saved, id:', info.insertedId);
+        res.send('Payment processed. <a href="/status/' + info.insertedId + '"> View details </a>');
       })
-      res.send(data);
   })    
+})
+
+//transaction detail
+app.get('/status/:id', (req, res)=>{
+  db.get(req.params.id, (err, data)=>{
+    res.send(data);
+  })
 })
 
 app.listen(config.port, () => {
