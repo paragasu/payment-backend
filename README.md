@@ -36,7 +36,7 @@ Open browser and point to [http://localhost:3000](http://localhost:3000)
 _Currency other than USD, EUR and AUD will do_
 
 
-#On saving credit card details
+##On saving credit card details
 Please use braintree or paypal vault services.   
 Do not save the credit card on your own server.  
 All transaction should always be on secure connection.
