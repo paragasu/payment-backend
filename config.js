@@ -3,6 +3,7 @@
 const config = {
   development: {
     port: 3000,
+    db: 'mongodb://localhost:27017/test',
     sandbox: true,
     paypal: {
       clientId: 'AX_SYjPGHaW2cgCAODpayjLqVp6jRQ4hbx-CZUeyPzXjNc8xxgZoHoiLNIe67o7jUrfBmXiX8W1VT9Rp',
@@ -16,6 +17,7 @@ const config = {
   },
   production: {
     port: process.env.PORT,
+    db: process.env.MONGODB_URL,
     sandbox: false,
     paypal: {
       clientId: process.env.PAYPAL_CLIENT_ID,

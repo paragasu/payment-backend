@@ -24,11 +24,13 @@
   },
   "homepage": "https://github.com/paragasu/payment-backend#readme",
   "dependencies": {
+    "assert": "^1.4.1",
     "body-parser": "^1.15.2",
     "braintree": "^1.41.0",
     "chai": "^3.5.0",
     "express": "^4.14.0",
     "mocha": "^3.1.0",
+    "mongodb": "^2.2.10",
     "nodemon": "^1.10.2",
     "paypal-rest-sdk": "^1.6.9"
   }
