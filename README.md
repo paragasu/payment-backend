@@ -17,7 +17,7 @@ Open browser and point to [http://localhost:3000](http://localhost:3000)
 
 #Testing
 ### Paypal
-[Paypal credit card test list](https://www.paypalobjects.com/en_US/vhelp/paypalmanager_help/credit_card_numbers.htm)
+Only can use credit card registered on paypal developer sandbox dashboard below,
 
 ```
   visa
